@@ -1,4 +1,4 @@
-package com.dumer.weather;
+package com.dumer.weather.ui.main;
 
 import android.content.Context;
 import android.net.Uri;
@@ -10,13 +10,14 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.dumer.weather.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class ForecastFragment extends Fragment {
 
-    private OnFragmentInteractionListener mListener;
     private ArrayAdapter<String> mForecastAdapter;
 
     public ForecastFragment() {
@@ -59,18 +60,11 @@ public class ForecastFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        mListener = null;
     }
 
     /**
@@ -83,8 +77,8 @@ public class ForecastFragment extends Fragment {
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
-    public interface OnFragmentInteractionListener {
+    /*public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
-    }
+    }*/
 }
