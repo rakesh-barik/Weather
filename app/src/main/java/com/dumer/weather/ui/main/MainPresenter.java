@@ -1,13 +1,15 @@
 package com.dumer.weather.ui.main;
 
+import android.util.Log;
+
 import com.dumer.weather.data.DataManager;
+import com.dumer.weather.data.model.List;
 import com.dumer.weather.data.model.WeatherResponse;
 import com.dumer.weather.ui.base.Presenter;
 
 import javax.inject.Inject;
 
 import rx.Observable;
-import rx.Scheduler;
 import rx.Subscriber;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
@@ -48,14 +50,21 @@ public class MainPresenter implements Presenter<MainMvpView> {
 
             @Override
             public void onError(Throwable e) {
-
+                Log.e("MainPresenter-","-dailyweather-",e);
             }
 
             @Override
             public void onNext(WeatherResponse weatherResponse) {
-                System.out.println(weatherResponse.getCity().getName());
+                if(weatherResponse != null){
+                    presentRequiredInfoToView(weatherResponse);
+
+                }
             }
         });
+    }
+
+    private void presentRequiredInfoToView(WeatherResponse weatherResponse) {
+        mainMvpView.showWeather(weatherResponse);
     }
 
 
