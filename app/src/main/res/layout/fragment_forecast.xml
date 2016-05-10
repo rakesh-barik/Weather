@@ -3,10 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.main.ForecastFragment">
-    <ListView
-        style="@style/ForecastListStyle"
-        android:id="@+id/listview_forecast"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:divider="@null" />
+        android:scrollbars="vertical" />
 </FrameLayout>

@@ -3,7 +3,7 @@ package com.dumer.weather.data.remote;
 import com.dumer.weather.data.model.WeatherResponse;
 
 import java.util.Map;
-
+import com.dumer.weather.BuildConfig;
 import retrofit.Call;
 import retrofit.Callback;
 import retrofit.http.GET;
@@ -32,6 +32,6 @@ public interface IWeatherApiEndpoint {
     Call<WeatherResponse> getDailyWeather(@QueryMap() Map<String,String> params);*/
 
     @GET("/data/2.5/forecast/daily?")
-    Observable<WeatherResponse> getDailyWeather(@Query("q") String cityName);
+    Observable<WeatherResponse> getDailyWeather(@QueryMap Map<String, String> queryParams);
 
 }

@@ -57,7 +57,8 @@ public class List {
      *     The dt
      */
     public Long getDt() {
-        return dt;
+        //returning date in millseconds
+        return dt*1000;
     }
 
     /**
