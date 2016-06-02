@@ -42,3 +42,4 @@ project.properties
 .gradle
 build/
 gradle.properties
+*.properties
